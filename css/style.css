@@ -1,0 +1,246 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    min-height: 80rem;
+    margin: 0 6.4%;
+    font-family: 'Red Hat Display', sans-serif;
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-color: var(--pale-blue);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.order-summary {
+    max-width: 45rem;
+    min-height: 69.7rem;
+    margin-top: 0.1rem;
+    background-color: white;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: 0 4rem 4rem -2rem rgba(13, 48, 189, 0.151826);
+    transition: max-width .1s ease, min-height .1s ease;
+    overflow: hidden;
+}
+
+.order-summary__image {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.order-summary__header {
+    width: 75%;
+    margin: auto;
+}
+
+.order-summary__title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--dark-blue);
+    margin-top: 4.5rem;
+}
+
+.order-summary__description {
+    font-size: 1.65rem;
+    color: var(--desaturated-blue);
+    line-height: 1.5758em;
+    letter-spacing: -0.01em;
+    margin-top: 1.6rem;
+    margin-bottom: 1.98rem;
+}
+
+.order-summary__plan {
+    width: 78.5%;
+    height: 9.92rem;
+    margin: 0 auto;
+    background-color: var(--very-pale-blue);
+    border-radius: 1.28rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.order-summary__annual-plan {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.order-summary__annual-plan img {
+    margin-left: 2.4rem;
+    margin-right: 1.95rem;
+}
+
+.order-summary__annual-plan div p:nth-child(1) {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--dark-blue);
+    margin-top: -0.1rem;
+    margin-bottom: .5rem;
+}
+
+.order-summary__annual-plan div p:nth-child(2) {
+    color: var(--desaturated-blue);
+    font-size: 1.65rem;
+}
+
+.order-summary__change {
+    all: unset;
+    padding: calc(2.4em / 1.4);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--bright-blue);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: .075s ease-in-out;
+}
+
+.order-summary__change:hover {
+    color: hsla(245, 75%, 52%, .7);
+    text-decoration: none;
+}
+
+.order-summary__proceed {
+    all: unset;
+    width: 78.5%;
+    padding: calc(1.4em / 1.5) 0 1em;
+    margin: 3.1rem 0 .7rem;
+    border: none;
+    background-color: var(--bright-blue);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Red Hat Display', sans-serif;
+    letter-spacing: 0.015em;
+    border-radius: 1.1rem;
+    box-shadow: 0 2rem 2rem rgba(56, 42, 225, 0.190291);
+    cursor: pointer;
+    transition: .15s ease-in-out;
+}
+
+.order-summary__proceed:hover {
+    background-color: hsla(245, 75%, 52%, .7);
+}
+
+.order-summary__cancel {
+    all: unset;
+    display: block;
+    padding: calc(2.4em / 1.5);
+    padding-right: calc(2.6em / 1.5);
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    color: var(--desaturated-blue);
+    transition: .1s ease-in-out;
+}
+
+.order-summary__cancel:hover {
+    color: black;
+}
+
+@media (max-width: 32.5em) {
+    body {
+        min-height: 66.5rem;
+    }
+
+    .order-summary {
+        max-width: 32.7rem;
+        min-height: 56.7rem;
+    }
+
+    .order-summary__header {
+        width: 80%;
+    }
+
+    .order-summary__title {
+        font-size: 2.2rem;
+        margin-top: 3.2rem;
+        margin-bottom: 1.7rem;
+    }
+
+    .order-summary__description {
+        font-size: 1.5rem;
+        line-height: 1.66em;
+        margin: 0 .5rem 2.4rem;
+    }
+
+    .order-summary__plan {
+        width: 85.325%;
+        height: auto;
+        min-height: 8rem;
+    }
+
+    .order-summary__annual-plan img {
+        margin-left: 1.6rem;
+        margin-right: 2rem;
+    }
+
+    .order-summary__annual-plan div p:nth-child(1) {
+        font-size: 1.4rem;
+        margin-bottom: .4rem;
+    }
+
+    .order-summary__annual-plan div p:nth-child(2) {
+        font-size: 1.4rem;
+    }
+
+    .order-summary__change {
+        padding: calc(1.6em / 1.3);
+        font-size: 1.3rem;
+    }
+
+    .order-summary__proceed {
+        width: 85.3%;
+        margin-top: 2.4rem;
+    }
+
+    .order-summary__cancel {
+        padding: 1.15em;
+    }
+}
+
+.attribution {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1.3rem;
+    color: hsl(224, 23%, 72%);
+    text-align: center;
+    margin-bottom: .8em;
+}
+
+.attribution a {
+    color: hsl(245, 52%, 72%);
+    transition: .12s;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    color: hsl(245, 75%, 52%);
+}
